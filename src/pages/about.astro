@@ -1,5 +1,24 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+    name: "IcyDesert",
+    occupation: "Technical Writer",
+    hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = [
+    "Python",
+    "HTML+CSS+Javascript",
+    "C",
+    "C++",
+    "Go",
+    "Writing Docs",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,19 +27,30 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>About</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-        <h1>About</h1>
-        <p>网名：冰原沙漠气候/ IcyDesert</p>
-        <p>
-            高一开始自学计算机技术，技术发展路线：Python、HTML+CSS+Javascript ->
-            C -> C++ -> Go
-        </p>
+        <h1>{pageTitle}</h1>
+        <p>网名：{identity.name}</p>
+        <p>技术栈：</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
         <p>《我的世界》生电玩家，欢迎交流！</p>
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {
+            goal === 3 ? (
+                <p>My goal is to finish in 3 days.</p>
+            ) : (
+                <p>My goal is not 3 days.</p>
+            )
+        }
     </body>
 </html>

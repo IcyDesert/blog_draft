@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Blog list";
 ---
 
 <html lang="en">
@@ -7,15 +7,18 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>blog-struggle for icyds.net</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-        <h1>Struggle for icyds.net</h1>
-        <p>选域名选好久，从 icy.dev 到 icy.lands</p>
-        <p>付款付半天</p>
+        <h1>{pageTitle}</h1>
+        <ul>
+            <li><a href="/posts/post-1/">Post 1</a></li>
+            <li><a href="/posts/post-2/">Post 2</a></li>
+            <li><a href="/posts/post-3/">Post 3</a></li>  
+        </ul>
     </body>
 </html>
