@@ -1,5 +1,14 @@
 ---
-// The frontmatter remains empty for now.
+const quotes = [
+    "温馨的光境不过借出到期拿回吗<br>等不到下一代 是吗",
+    "过往的回归分析永不能成为未来的无偏估计",
+    "Fight or flight?",
+    "人是一根会思考的芦苇",
+    "人类的悲欢并不相通，我只觉得他们吵闹",
+    "内心强大者从不吝惜赞美",
+    "《上海交通大学生存手册》！"
+]
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
 
 <html lang="en">
@@ -13,9 +22,9 @@
     <body>
         <main class="container">
             <div class="header">
-                <h1>欢迎造访我的博客！</h1>
+                <h1>欢迎来到我的博客！</h1>
                 <p>我是冰原沙漠气候。<br>I'm IcyDesert.</p>
-				<p style="font-size: 20px;">温馨的光境不过借出到期拿回吗<br>等不到下一代 是吗</p>
+				<p style="font-size: 15px;" set:html={randomQuote}></p>
             </div>
             <nav>
                 <a href="/blog" class="button">博客</a>
