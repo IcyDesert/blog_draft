@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
+const pageTitle = "Blog sorted in tags";
+
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+const uniqueTags = [
+    ...new Set(allPosts.flatMap((post: any) => post.frontmatter.tags))
+];
+---
+<style>
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="tags">
+        {uniqueTags.map((tag: string) => <Tag tagName={tag} />)}
+    </div>
+</BaseLayout>
