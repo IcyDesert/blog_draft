@@ -1,5 +1,5 @@
 ---
-import { quotes } from "./quotes.ts";
+import { quotes, generate } from "./quotes.ts";
 ---
 
 <html lang="en">
@@ -23,12 +23,8 @@ import { quotes } from "./quotes.ts";
                 <a href="/projects" class="button">项目</a>
             </nav>
         </main>
-        <script define:vars={{ quotes }}>
-            const quoteElement = document.getElementById('quote');
-            if (quoteElement) {
-                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                quoteElement.innerHTML = randomQuote;
-            }
+        <script define:vars={{ quotes, generate }}>
+            generate()
         </script>
     </body>
 </html>

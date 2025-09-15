@@ -6,3 +6,12 @@ export const quotes: string[] = [
     "内心强大者从不吝惜赞美",
     "《上海交通大学生存手册》！"
 ]
+
+export function generate() {
+    const quoteElement = document.getElementById('quote');
+    if (quoteElement) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteElement.innerHTML = randomQuote;
+    }
+
+}
