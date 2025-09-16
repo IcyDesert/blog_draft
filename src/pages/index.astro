@@ -1,5 +1,5 @@
 ---
-import { quotes } from "./quotes.ts";
+import { _quotes } from "./quotes.ts";
 ---
 
 <html lang="en">
@@ -23,12 +23,12 @@ import { quotes } from "./quotes.ts";
                 <a href="/projects" class="button">项目</a>
             </nav>
         </main>
-        <script define:vars={{ quotes }}>
+        <script define:vars={{ _quotes }}>
             const quoteElement = document.getElementById("quote");
             if (quoteElement) {
                 const quotes = JSON.parse(
                     new TextDecoder().decode(
-                        Uint8Array.from(atob(quotes), (c) => c.charCodeAt(0)),
+                        Uint8Array.from(atob(_quotes), (c) => c.charCodeAt(0)),
                     ),
                 );
                 const randomQuote =
