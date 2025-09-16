@@ -1,4 +1,4 @@
-export const quotes: string[] = [
+const _quotes: string[] = [
     "温馨的光境不过借出到期拿回吗<br>等不到下一代 是吗",
     "过往的回归分析<br>永不能成为<br>未来的无偏估计",
     "Fight or flight?",
@@ -7,11 +7,7 @@ export const quotes: string[] = [
     "《上海交通大学生存手册》！"
 ]
 
-export function generate() {
-    const quoteElement = document.getElementById('quote');
-    if (quoteElement) {
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        quoteElement.innerHTML = randomQuote;
-    }
+export const quotes = Buffer.from(JSON.stringify(_quotes)).toString('base64');
 
+export function generate() {
 }
